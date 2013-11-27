@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<META http-equiv="Content-Style-Type" content="text/css">
+<TITLE>ようこそ！＠Ueki掲示板</TITLE>
+<BASE href="">
+<link rel="stylesheet" type="text/css" href="">
+</HEAD>
+<BODY class="c1" background="" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#660099" alink="#FF0000">
+<A NAME="PageTop"></A>
+<DIV align="center" style="padding: 15px 0;"><FONT SIZE="6"><B>ようこそ！＠Ueki掲示板</B></FONT></DIV>
+<TABLE border="0" align="center">
+<TR>
+<TD align="center">
+<FORM METHOD="post" ACTION="new">
+<TABLE border="1" cellspacing="6" cellpadding="3" bgcolor="#CCFFCC">
+<TR>
+<TD>
+<FONT SIZE="3"><B>新規スレッド作成</B></FONT><BR><BR>
+<DIV style="width:600px;margin-left:12%;"><DIV>タイトル： <INPUT TYPE="text" class="Title" NAME="content" style="width:300px;"><INPUT TYPE="submit" VALUE="新規スレッド作成" class="S10w"><BR>
+</DIV></DIV>
+</TD>
+</TR>
+</TABLE>
+</FORM>
+</TD>
+</TR>
+</TABLE>
+
+<hr>
+<br />
+<br />
+
+<div align="center">
+<TABLE class="Thread" border="1" cellspacing="6" cellpadding="3" bgcolor="#EFEFEF">
+<% @info.each do |info| %>
+<TR class="ThreadList">
+<TD ><BR>
+<B><%= info.id %>&nbsp &nbsp &nbsp &nbsp<FONT SIZE="2" COLOR="#FF0000"><a href="http://localhost:3000/post/index?id=<%=info.id %>"><%= info.content %></FONT></B><BR>
+</TD>
+</TR>
+<% end %>
+</TABLE>
+</div>
+
+
+</BODY>
+</HTML>
