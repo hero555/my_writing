@@ -1,19 +1,20 @@
 class PostController < ApplicationController
   def index
   	@info = Topic.find(params[:id])
-    @infodata = Topic.post.all
+    @post = @info.posts.build
+    @infodata = @info.posts.all
   end
 
   def new
-    @info = Post.new(
+   @post = Post.new(
     :comment => params['comment']
     )
-    @info.save
-    render :action => 'list.html.erb'
+   @post.save
+   render :action => 'list.html.erb'
   end
 
   def list
-    @info = Topic.find(params[:id])
-    @infodata = Topic.post.all
+    @infos = Post.find(params[:topic_id])
+    @infodatas = @infos.posts.all
   end
 end
