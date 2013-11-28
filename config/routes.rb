@@ -2,6 +2,7 @@ MyWriting::Application.routes.draw do
   get "post/index"
   post "post/new"
   get "post/list"
+  get "post/list"
 
   root :to => 'top#index'
 

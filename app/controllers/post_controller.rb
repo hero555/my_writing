@@ -4,11 +4,14 @@ class PostController < ApplicationController
   end
 
   def new
-    @info.post.comment = params['comment']
+    @info = Post.new(
+    :comment => params['comment']
+    )
     @info.save
     render :action => 'list.html.erb'
   end
 
   def list
+    @info = Topic.find(params[:id])
   end
 end
