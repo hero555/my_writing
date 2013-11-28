@@ -8,6 +8,7 @@ MyWriting::Application.routes.draw do
 
   get 'top/entry'
   post 'top/new'
+  get 'top/list'
 
 
 
